@@ -1,9 +1,9 @@
-# TeamsDeviceAccount
+# Repo Purpose
 This project purpose is to drop the latest scripts I made to create a functional M365 Account for Surface HUB or MTR
 
 # Scripts
 
-**New-CreateTeamsDeviceAccount.ps1** script allow you to create an AAD Account that works as an working identity for HUB and MTR devices.
+**New-TeamsDeviceAccount.ps1** script allow you to create an AAD Account that works as an working identity for HUB and MTR devices.
 
 ### Usage
 
@@ -19,7 +19,7 @@ If you wish to automate the creation in a batch way, you can redirect the stream
 
 The calling syntax would be :
 
-    import-csv .\file.csv |% { .\New-CreateTeamsDeviceAccount.ps1 }
+    import-csv .\file.csv |% { .\New-TeamsDeviceAccount.ps1 }
 
 The header format is :
 
@@ -27,4 +27,4 @@ The header format is :
 
 A sample csv file is part of the repo.
 
-**PreReq-CreateTeamsDeviceAccount.ps1** script is to run only once as it justs install the needed module to run properly the New-CreateTeamsDeviceAccount script. 
+**PreReq-TeamsDeviceAccount.ps1** script is to run only once as it justs install the needed module to run properly the New-CreateTeamsDeviceAccount script. 
