@@ -169,7 +169,13 @@ Set-AzureADUser -ObjectId $upn -AccountEnabled $True -DisplayName $alias -Passwo
 if ($null -eq $EasPolicyName) {
     Write-Verbose ("Warning : No EAS Policy applied of the device")
 } else {
-    Set-CASMailbox -Identity $upn -ActiveSyncMailboxPolicy $EasPolicyName    
+    try {
+        Set-Mailbox $upn -Type Regular
+        Set-CASMailbox -Identity $upn -ActiveSyncMailboxPolicy $EasPolicyName
+        Set-Mailbox $upn -Type Room        
+    } catch {
+        write-error "ActiveSyncPolicy assignation failed"
+    }
 }
 
 #Assign the Teams License
