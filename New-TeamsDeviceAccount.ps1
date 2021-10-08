@@ -172,11 +172,15 @@ if ($null -eq $EasPolicyName) {
     try {
         Set-Mailbox $upn -Type Regular
         Set-CASMailbox -Identity $upn -ActiveSyncMailboxPolicy $EasPolicyName
-        Set-Mailbox $upn -Type Room        
+        Set-Mailbox $upn -Type Room
     } catch {
         write-error "ActiveSyncPolicy assignation failed"
     }
 }
+
+#Don't know why - Seem that the previous Room application never works ?!? - Try to reapply
+Set-Mailbox $upn -Type Room
+
 
 #Assign the Teams License
 try {
