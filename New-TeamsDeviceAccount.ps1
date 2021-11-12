@@ -138,7 +138,7 @@ if ($null -eq $EasPolicyName) {
 
 write-host "One moment, We are creating the account ..."
 #Create the mailbox
-$user = New-Mailbox -MicrosoftOnlineServicesID $upn -Alias $alias -Name $alias -Room -EnableRoomMailboxAccount $true -RoomMailboxPassword (ConvertTo-SecureString -String $passw -AsPlainText -Force)
+$user = New-Mailbox -MicrosoftOnlineServicesID $upn -Alias $alias -Name $alias -EnableRoomMailboxAccount $true -RoomMailboxPassword (ConvertTo-SecureString -String $passw -AsPlainText -Force)
 
 #Check user availability
 $NewUSerOK=$False

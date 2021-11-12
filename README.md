@@ -27,6 +27,8 @@ The header format is :
 
 A sample csv file is part of the repo.
 
-NOTA: When used in pipe mode, the EASPolicy specified in the csv file must already exist.
+NOTA: When used in pipe mode, the EASPolicy specified in the csv file must already exist. If not you can use the **New-EASPolicy** script to create one
 
 **PreReq-TeamsDeviceAccount.ps1** script is to run only once as it justs install the needed module to run properly the New-CreateTeamsDeviceAccount script. 
+
+**Dump-Info.ps1** script purpose is to quickly provide a dump of an account information for debugging purpose (check after the creation for instance)
